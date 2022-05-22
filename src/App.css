@@ -1,0 +1,111 @@
+/* Main CSS */
+html, body {
+  background-color: #f5f6fa;
+}
+
+/* Container */
+.container {
+  max-width: 1260px;
+  margin: auto;
+}
+
+/* Header */
+.title, .sub-title {
+  display: flex;
+  justify-content: flex-start;
+}
+.title h1 {
+  color: #8a5ea9;
+  font-weight: 100;
+  font-family: system-ui;
+  margin: 20px 0 12px 0;
+  font-size: 32px;
+}
+.sub-title p {
+  color: #8a5ea9;
+  font-family: system-ui;
+  font-size: 19px;
+  margin: 12px 0 30px 0;
+}
+
+/* Dropdowns */
+.dropdowns-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.dropdowns-wrapper span {
+  color: #686565;
+  margin-right: 10px;
+  font-family: system-ui;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+.dropdowns-wrapper select {
+  border-color: #2b9fd8;
+  padding: 9px 20px;
+  background-color: #8dd0fa;
+  color: #686565;
+  font-family: system-ui;
+  width: 230px;
+  border-radius: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #8dd0fa, #8dd0fa);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.dropdowns-wrapper select:active, .dropdowns-wrapper select:focus {
+  outline: 0;
+}
+
+/* Chart */
+.chart-sec {
+  display: flex;
+  background-color: #fff;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px 2px #e6e6e6;
+}
+.chart-sec .chart-wrapper {
+  padding: 30px 20px 30px 25px;
+}
+.chart-sec canvas {
+  width: 68vw !important;
+  height: 68vh !important;
+}
+.chart-sec .lessons-list {
+  padding: 38px 22px 27px 40px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: system-ui;
+  border-left: 1px solid #d5d4d4;
+}
+.chart-sec .lessons-list .school-lessons div:first-child {
+  margin-bottom: 5px;
+}
+.chart-sec .lessons-list .total-lessons {
+  font-size: 20px;
+  color: #9c61c3;
+  font-weight: 600;
+}
+.chart-sec .total-number {
+  font-size: 22px;
+  font-weight: 600;
+  color: #a679ce;
+}
+.chart-sec .lessons span:last-child {
+  font-size: 17px;
+  color: #a679ce;
+}
+.chart-sec .school-lessons {
+  width: 100%;
+}
+.chart-sec .school-name {
+  font-size: 12px;
+  color: #a679ce;
+}
