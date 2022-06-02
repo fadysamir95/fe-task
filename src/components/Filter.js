@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+
+// Import the data
 import dataList from "../data.json";
+
 import LineChart from "./LineChart";
 import { Line } from "react-chartjs-2";
 
@@ -27,11 +30,15 @@ const Filter = () => {
         return months.indexOf(c) === index;
     });
 
+    // Map on all countries and remove duplicates and put it in allCountries
     const countries = dataList.map((item) => item.country);
     let allCountries = countries.filter((c, index) => {
         return countries.indexOf(c) === index;
     });
+
+    // When occur any change on country select dropdown
     useEffect(() => {
+        // Will return all objects only that contain the selected country
         let afterCountry = dataList.filter((items) => {
             if (items.country === selectedCountry) {
                 return items;
@@ -41,6 +48,7 @@ const Filter = () => {
             if (selectedCamp == "All") {
                 return afterCountry;
             } else {
+                // Will return all objects only that contain the selected camp
                 return afterCountry.filter((items) => {
                     if (items.camp === selectedCamp) {
                         return items;
@@ -48,11 +56,15 @@ const Filter = () => {
                 });
             }
         };
+
+        // Make sure to execute it
         let afterCamp1 = afterCamp();
+
         let afterSchool = () => {
             if (selectedSchool == "All") {
                 return afterCamp1;
             } else {
+                // Will return all objects only that contain the selected school
                 return afterCamp1.filter((items) => {
                     if (items.school === selectedSchool) {
                         return items;
@@ -60,7 +72,11 @@ const Filter = () => {
                 });
             }
         };
+
+        // Make sure to execute it
         let afterSchool1 = afterSchool();
+
+        // Set State
         setItemsAfter(afterSchool1);
 
         console.log(afterSchool1);
@@ -70,7 +86,10 @@ const Filter = () => {
             return allCamps.indexOf(c) === index;
         });
         setCampsAfter(newCamps);
+
     }, [selectedCountry]);
+    
+    // --------------------------------------------------------------------------------------------
 
     useEffect(() => {
         let afterCountry = dataList.filter((items) => {
